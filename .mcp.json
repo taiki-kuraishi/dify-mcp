@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "context7": {
+      "args": ["-y", "@upstash/context7-mcp"],
+      "command": "bunx",
+      "type": "stdio"
+    },
+    "git": { "args": ["mcp-server-git"], "command": "uvx" },
+    "mastra": {
+      "args": ["-y", "@mastra/mcp-docs-server"],
+      "command": "bunx"
+    },
+    "sequential-thinking": {
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "command": "bunx"
+    }
+  }
+}
