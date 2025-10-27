@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# mise description="run dify-mcp streamable http transport dev server"
+# MISE description="run dify-mcp streamable http transport dev server"
 
 cd apps/dify-mcp
 uv run python -m src.http_server

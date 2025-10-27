@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# mise description="lint code"
+# MISE description="lint code"
 
 uv run ruff check
 

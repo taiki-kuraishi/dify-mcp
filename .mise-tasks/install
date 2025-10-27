@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# mise description="install project env"
+# MISE description="install project env"
 
 mise install
 

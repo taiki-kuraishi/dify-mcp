@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# mise description="run dify-mcp stdio  transport dev server"
+# MISE description="run dify-mcp stdio  transport dev server"
 
 cd apps/dify-mcp
 uv run python -m src

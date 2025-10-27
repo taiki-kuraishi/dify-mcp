@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# mise description="format code"
+# MISE description="format code"
 
 dprint fmt
 

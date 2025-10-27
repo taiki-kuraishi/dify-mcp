@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# mise description="Start MCP inspector debugging tool"
+# MISE description="Start MCP inspector debugging tool"
 
 bunx @modelcontextprotocol/inspector

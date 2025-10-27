@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# mise description="update git submodules"
+# MISE description="update git submodules"
 
 git submodule update --init --recursive
 git submodule foreach --recursive 'git checkout main && git pull origin main'
