@@ -1,0 +1,10 @@
+[tools]
+lefthook = "latest"
+uv = "latest"
+
+[tasks.update-submodule]
+description = "update git submodules"
+run = [
+  "git submodule update --init --recursive",
+  "git submodule foreach --recursive 'git checkout main && git pull origin main'",
+]

@@ -1,0 +1,10 @@
+# Mac
+.DS_Store
+
+# vscode
+.vscode/settings.json
+.vscode/launch.json
+
+# mise
+# FYI: https://mise.jdx.dev/configuration.html#configuration
+.mise.local.toml
