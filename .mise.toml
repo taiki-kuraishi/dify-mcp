@@ -1,10 +1,13 @@
 [tools]
 lefthook = "latest"
 uv = "latest"
+dprint = "latest"
+bun = "latest"
 
-[tasks.update-submodule]
-description = "update git submodules"
-run = [
-  "git submodule update --init --recursive",
-  "git submodule foreach --recursive 'git checkout main && git pull origin main'",
-]
+[tasks.run-dify-workflow-mcp]
+description = "Run Dify Workflow MCP server with inspector (http://localhost:6274)"
+run = "cd dify-mcp && .venv/bin/fastmcp dev src/dify_mcp/server.py"
+
+[tasks.run-dify-workflow-http]
+description = "Run Dify Workflow MCP server via HTTP/SSE (http://0.0.0.0:8000)"
+run = "cd dify-mcp && uv run python src/dify_mcp/http_server.py"

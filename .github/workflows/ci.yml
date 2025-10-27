@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    name: ci
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dprint/check@v2.3
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked --all-extras --dev
+      - run: uv run ruff check
+      - run: uv run mypy src/
+        working-directory: apps/dify-mcp
+      - run: uv run pytest -v
+        working-directory: apps/dify-mcp

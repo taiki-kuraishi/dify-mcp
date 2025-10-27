@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# mise description="run dify-mcp dev server"
+#MISE depends=[ "run:dify-mcp:streamable-http" ]

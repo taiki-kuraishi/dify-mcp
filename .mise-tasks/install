@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# mise description="install project env"
+
+mise install
+
+uv sync --dev
+
+lefthook install

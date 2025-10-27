@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# mise description="lint code"
+
+uv run ruff check
+
+# dify-mcp
+cd apps/dify-mcp
+uv run mypy src/

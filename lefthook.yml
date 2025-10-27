@@ -1,0 +1,15 @@
+pre-commit:
+  parallel: true
+  commands:
+    dprint:
+      stage_fixed: true
+      run: dprint fmt
+    ruff:
+      stage_fixed: true
+      run: uv run ruff check --fix --unsafe-fixes
+    dify-mcp:test:
+      run: uv run pytest
+      root: apps/dify-mcp
+    dify-mcp:mypy:
+      run: uv run mypy src/
+      root: apps/dify-mcp

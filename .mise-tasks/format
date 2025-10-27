@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# mise description="format code"
+
+dprint fmt
+
+uv run ruff check --fix --unsafe-fixes
