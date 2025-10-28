@@ -8,3 +8,6 @@
 # mise
 # FYI: https://mise.jdx.dev/configuration.html#configuration
 .mise.local.toml
+
+# python
+__pycache__/

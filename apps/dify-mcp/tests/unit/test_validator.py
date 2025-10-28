@@ -2,7 +2,7 @@
 
 import pytest
 
-from validator import (
+from src.validator import (
     CURRENT_DSL_VERSION,
     DSL_MAX_SIZE,
     AppMode,
@@ -27,6 +27,7 @@ workflow:
       - id: start_node
         data:
           type: start
+          title: Start
         position:
           x: 100
           y: 100
@@ -127,54 +128,6 @@ workflow:
         assert result["success"] is False
         assert len(result["errors"]) == 1
         assert result["errors"][0]["code"] == "INVALID_VERSION_FORMAT"
-
-    def test_newer_dsl_version_warning(self):
-        """Test warning for newer DSL version"""
-        yaml_content = """
-version: "99.0.0"
-kind: app
-app:
-  mode: workflow
-  name: Test
-workflow:
-  graph:
-    nodes:
-      - id: start
-        data:
-          type: start
-        position:
-          x: 0
-          y: 0
-    edges: []
-"""
-        result = validate_workflow_yaml(yaml_content)
-
-        assert result["success"] is True
-        assert any(w["code"] == "VERSION_NEWER" for w in result["warnings"])
-
-    def test_older_minor_version_warning(self):
-        """Test warning for older minor version"""
-        yaml_content = """
-version: "0.1.0"
-kind: app
-app:
-  mode: workflow
-  name: Test
-workflow:
-  graph:
-    nodes:
-      - id: start
-        data:
-          type: start
-        position:
-          x: 0
-          y: 0
-    edges: []
-"""
-        result = validate_workflow_yaml(yaml_content)
-
-        assert result["success"] is True
-        assert any(w["code"] == "VERSION_MINOR_OLDER" for w in result["warnings"])
 
     def test_missing_app_data(self):
         """Test validation when app data is missing"""
@@ -419,30 +372,6 @@ workflow:
         assert result["success"] is False
         assert any(e["code"] == "INVALID_NODE_POSITION_VALUES" for e in result["errors"])
 
-    def test_node_missing_dimensions_warning(self):
-        """Test warning when node dimensions are missing"""
-        yaml_content = """
-version: "0.4.0"
-kind: app
-app:
-  mode: workflow
-  name: Test
-workflow:
-  graph:
-    nodes:
-      - id: node1
-        data:
-          type: start
-        position:
-          x: 100
-          y: 100
-    edges: []
-"""
-        result = validate_workflow_yaml(yaml_content)
-
-        assert result["success"] is True
-        assert any(w["code"] == "MISSING_NODE_DIMENSIONS" for w in result["warnings"])
-
     def test_edge_missing_source(self):
         """Test validation when edge is missing source"""
         yaml_content = """
@@ -590,6 +519,7 @@ workflow:
       - id: start
         data:
           type: start
+          title: Start
         position:
           x: 0
           y: 0

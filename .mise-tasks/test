@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# MISE description="run test code"
+
+# dify-mcp
+cd apps/dify-mcp
+uv run pytest
