@@ -11,6 +11,20 @@ FastMCPを使用して、Dify Workflowの定義ファイルの妥当性をチェ
 
 miseを使用することで、必要な開発ツール（uv、dprint、bun、lefthookなど）が自動的に管理されます。
 
+## installation
+
+1. miseをインストール
+
+```bash
+mise install
+```
+
+1. プロジェクトの開発環境をセットアップ
+
+```bash
+mise run install
+```
+
 ## ディレクトリ構造
 
 ```text

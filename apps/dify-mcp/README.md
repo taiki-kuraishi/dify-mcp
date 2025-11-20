@@ -54,16 +54,6 @@ cd dify-workflow-mcp
 uv sync
 ```
 
-## Usage
-
-### Development Mode (with Inspector)
-
-```bash
-uv run fastmcp dev src/dify_workflow_mcp/server.py
-```
-
-Opens MCP Inspector at `http://localhost:6274`.
-
 ### Claude Desktop Integration
 
 Add to `claude_desktop_config.json`:
